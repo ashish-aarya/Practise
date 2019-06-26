@@ -3,14 +3,13 @@ package Recursion;
 import java.util.ArrayList;
 
 public class RecursionGet {
-	public static void main() {
-		System.out.println("Gooo");
-		// System.out.println(getss("abc"));
-		// System.out.println("abc");
-		// System.out.println(getssper("abc"))
+	public static void main(String[] args) {
+		System.out.println(getss("abc"));
+		System.out.println(getssper("abc"));
 
-		// System.out.println(boardpath(0, 10));
+		System.out.println(boardpath(0, 10));
 		System.out.println(Mazepath(0, 0, 3, 3));
+		System.out.println(Mazepathdig(0, 0, 3, 3));
 	}
 
 	public static ArrayList<String> getss(String ss) {
@@ -39,10 +38,11 @@ public class RecursionGet {
 		}
 		char ch = ss.charAt(0);
 		String ros = ss.substring(1);
-		ArrayList<String> rr = getssper(ros);
 		ArrayList<String> mr = new ArrayList<String>();
+		ArrayList<String> rr = getssper(ros);
+
 		for (String val : rr) {
-			for (int i = 0; i < val.length(); i++) {
+			for (int i = 0; i <= val.length(); i++) {
 				String ans = val.substring(0, i) + ch + val.substring(i);
 				mr.add(ans);
 			}
@@ -75,7 +75,7 @@ public class RecursionGet {
 			br.add("");
 			return br;
 		}
-		if (cc > ec && cr > er) {
+		if (cc > ec || cr > er) {
 			ArrayList<String> br = new ArrayList<>();
 			return br;
 		}
@@ -98,7 +98,7 @@ public class RecursionGet {
 			br.add("");
 			return br;
 		}
-		if (cc > ec && cr > er) {
+		if (cc > ec || cr > er) {
 			ArrayList<String> br = new ArrayList<>();
 			return br;
 		}
