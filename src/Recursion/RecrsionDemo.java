@@ -1,6 +1,5 @@
 package Recursion;
 
-import java.awt.print.Printable;
 import java.util.Scanner;
 
 public class RecrsionDemo {
@@ -8,28 +7,28 @@ public class RecrsionDemo {
 		// TODO Auto-generated method stub
 		Scanner scr = new Scanner(System.in);
 
-		 int n = scr.nextInt();
-		 System.out.println("Print Decresing");
-		 PD(n);
-		 System.out.println("Print Increasing");
-		 PI(n);
+		int n = scr.nextInt();
+		System.out.println("Print Decresing");
+		PD(n);
+		System.out.println("Print Increasing");
+		PI(n);
 		System.out.println("Print Skipping");
-		 PSI(n);
-		 
-		 System.out.println("factorial: "+Factorial(n));
-		 System.out.println("Power"+power(n, 3));
-		 //int arr[] = { 1, 2, 3, 4, 5 };
-		 int arr[] = { 40, 90, 30, 20, 40, 60 };
-		 System.out.println("first index"+firstindex(arr, 0, 40));
-		 System.out.println("Last index"+lastindex(arr, 0, 40));
+		PSI(n);
+
+		System.out.println("factorial: " + Factorial(n));
+		System.out.println("Power" + power(n, 3));
+		// int arr[] = { 1, 2, 3, 4, 5 };
+		int arr[] = { 40, 90, 30, 20, 40, 60 };
+		System.out.println("first index" + firstindex(arr, 0, 40));
+		System.out.println("Last index" + lastindex(arr, 0, 40));
 		System.out.println("Print all indeces ");
-		 printallindices(arr, 0, 40);
-		 System.out.println("ALL indeces");
-		 int ar[] = allindices(arr, 0, 40, 0);
-		 for (int i = 0; i < ar.length; i++)
-		 System.out.print(ar[i] + ",");
-		 System.out.println("factorial"+factorial(6));
-		System.out.println("Maximum"+maximum(arr, 0));
+		printallindices(arr, 0, 40);
+		System.out.println("ALL indeces");
+		int ar[] = allindices(arr, 0, 40, 0);
+		for (int i = 0; i < ar.length; i++)
+			System.out.print(ar[i] + ",");
+		System.out.println("factorial" + factorial(6));
+		System.out.println("Maximum" + maximum(arr, 0));
 
 	}
 
@@ -132,7 +131,7 @@ public class RecrsionDemo {
 	}
 
 	public static int maximum(int ar[], int vid) {
-		if (ar.length-1 == vid)
+		if (ar.length - 1 == vid)
 			return ar[vid];
 		int max = ar[vid];
 		max = maximum(ar, vid + 1);

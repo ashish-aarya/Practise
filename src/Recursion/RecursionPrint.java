@@ -5,7 +5,10 @@ public class RecursionPrint {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		// printss("abc", "");
-		printssascii("abc", "");
+		// printssascii("abc", "");
+		// printssper("abc", "");
+//		printboardpath(0, 10, "");
+		System.out.println(countboardpath(0, 10));
 
 	}
 
@@ -33,12 +36,46 @@ public class RecursionPrint {
 	}
 
 	public static void printssper(String str, String ans) {
+		if (str.length() == 0) {
+			System.out.println(ans);
+			return;
+		}
 		for (int i = 0; i < str.length(); i++) {
 			{
 				char ch = str.charAt(i);
-				String ros = str.substring(0, i) + ch + str.substring(i + 1);
-				printssper(ros, ans);
+				String ros = str.substring(0, i) + str.substring(i + 1);
+				printssper(ros, ans + ch);
 			}
 		}
+
 	}
+
+	public static void printboardpath(int curr, int end, String ans) {
+		if (curr == end) {
+			System.out.println(ans);
+			return;
+		}
+		if (curr > end) {
+			return;
+		}
+		for (int dice = 1; dice <= 6; dice++) {
+			printboardpath(curr + dice, end, ans + dice);
+		}
+	}
+
+	public static int countboardpath(int curr, int end) {
+		if (curr == end) {
+
+			return 1;
+		}
+		if (curr > end) {
+			return 0;
+		}
+		int count = 0;
+		for (int dice = 1; dice <= 6; dice++) {
+			count += countboardpath(curr + dice, end);
+		}
+		return count;
+	}
+
 }
