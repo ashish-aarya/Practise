@@ -7,9 +7,11 @@ public class RecursionPrint {
 		// printss("abc", "");
 		// printssascii("abc", "");
 		// printssper("abc", "");
-//		printboardpath(0, 10, "");
-		System.out.println(countboardpath(0, 10));
+		// printboardpath(0, 10, "");
+		// System.out.println(countboardpath(0, 10));
+		// printmazepath(0, 0, 2, 2, "");
 
+		System.out.println(countmazepath(0, 0, 2, 2));
 	}
 
 	public static void printss(String str, String ans) {
@@ -75,6 +77,33 @@ public class RecursionPrint {
 		for (int dice = 1; dice <= 6; dice++) {
 			count += countboardpath(curr + dice, end);
 		}
+		return count;
+	}
+
+	public static void printmazepath(int cr, int cc, int er, int ec, String ans) {
+		if (cr == er && cc == ec) {
+			System.out.println(ans);
+			return;
+		}
+		if (cr > er || cc > ec) {
+			return;
+		}
+		printmazepath(cr + 1, cc, er, ec, ans + "H");
+		printmazepath(cr, cc + 1, er, ec, ans + "V");
+	}
+
+	public static int countmazepath(int cr, int cc, int er, int ec) {
+		if (cr == er && cc == ec) {
+
+			return 1;
+		}
+		if (cr > er || cc > ec) {
+			return 0;
+		}
+
+		int count = 0;
+		count += countmazepath(cr + 1, cc, er, ec);
+		count += countmazepath(cr, cc + 1, er, ec);
 		return count;
 	}
 
