@@ -4,12 +4,12 @@ public class RecursionPrint {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		// printss("abc", "");
-		// printssascii("abc", "");
-		// printssper("abc", "");
-		// printboardpath(0, 10, "");
-		// System.out.println(countboardpath(0, 10));
-		// printmazepath(0, 0, 2, 2, "");
+		 printss("abc", "");
+		 printssascii("abc", "");
+		 printssper("abc", "");
+		 printboardpath(0, 10, "");
+		 System.out.println(countboardpath(0, 10));
+		 printmazepath(0, 0, 2, 2, "");
 
 		System.out.println(countmazepath(0, 0, 2, 2));
 	}
