@@ -5,11 +5,11 @@ import java.util.ArrayList;
 public class RecursionGet {
 	public static void main(String[] args) {
 		System.out.println(getss("abc"));
-		System.out.println(getssper("abc"));
-
-		System.out.println(boardpath(0, 10));
-		System.out.println(Mazepath(0, 0, 3, 3));
-		System.out.println(Mazepathdig(0, 0, 3, 3));
+//		System.out.println(getssper("abc"));
+//
+//		System.out.println(boardpath(0, 10));
+//		System.out.println(Mazepath(0, 0, 3, 3));
+//		System.out.println(Mazepathdig(0, 0, 3, 3));
 	}
 
 	public static ArrayList<String> getss(String ss) {
