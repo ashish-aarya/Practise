@@ -1,17 +1,17 @@
 package StackQueue;
 
-public class Queue {
-	private int[] data;
-	private int front;
-	private int size;
-	
+public class Queue2 {
+	protected int[] data;
+	protected int front;
+	protected int size;
+
 	public static final int defcap = 10;
 
-	public Queue() throws Exception {
+	public Queue2() throws Exception {
 		this(defcap);
 	}
 
-	public Queue(int cap) throws Exception {
+	public Queue2(int cap) throws Exception {
 		if (cap < 1)
 			throw new Exception("Invalid Capicity");
 		this.data = new int[cap];
@@ -63,7 +63,7 @@ public class Queue {
 
 	public void display() {
 		for (int i = 0; i < this.data.length; i++) {
-			int ar = (i + this.front) % this.data.length;
+			int ar = ( this.front+i) % this.data.length;
 			System.out.print(this.data[ar] + " ");
 		}
 	}
