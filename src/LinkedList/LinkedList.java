@@ -76,22 +76,63 @@ public class LinkedList {
 		if (idx < 0 || idx >= this.size)
 			throw new Exception("Invalid Index");
 		node temp = this.head;
-		 for (int i=0;i<idx;i++)
-		 {
-			 temp=temp.next;
-		 }
-		 return temp.data;
+		for (int i = 0; i < idx; i++) {
+			temp = temp.next;
+		}
+		return temp.data;
 	}
+
 	private node getNodeAt(int idx) throws Exception {
 		if (idx == 0)
 			throw new Exception("Linked List Empty");
 		if (idx < 0 || idx >= this.size)
 			throw new Exception("Invalid Index");
 		node temp = this.head;
-		 for (int i=0;i<idx;i++)
-		 {
-			 temp=temp.next;
-		 }
-		 return temp;
+		for (int i = 0; i < idx; i++) {
+			temp = temp.next;
+		}
+		return temp;
+	}
+
+	public void addAt(int idx, int item) throws Exception {
+		if (idx < 0 || idx > this.size)
+			throw new Exception("Invalid Index");
+		if (idx == 0)
+			addfirst(item);
+		else if (idx == this.size)
+			addlast(item);
+		else {
+			node nn = new node();
+			nn.data = item;
+			nn.next = null;
+			node nm = getNodeAt(idx - 1);
+			node nm1 = nm.next;
+			nm.next = nn;
+			nn.next = nm1;
+			this.size++;
+
+		}
+	}
+
+	public int removefirst() throws Exception {
+		if (this.size == 0) {
+			throw new Exception("Linked List is Empty");
+		}
+		int rv = this.head.data;
+		if (this.size == 1) {
+			this.head = null;
+			this.tail = null;
+			this.size = 0;
+		} else {
+			this.head = this.head.next;
+			this.size--;
+		}
+		return rv;
+	}
+
+	public int removelast() throws Exception {
+		if (this.size == 0)
+			throw new Exception("LinkedList is Empty");
+
 	}
 }
