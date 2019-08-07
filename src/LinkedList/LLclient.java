@@ -19,7 +19,11 @@ public class LLclient {
 		ll.addAt(2, 80);
 		ll.display();
 		System.out.println(ll.removefirst());
-		
+		ll.display();
+		System.out.println(ll.removelast());
+		ll.display();
+		System.out.println(ll.removeat(1));
+		ll.display();
 	}
 
 }

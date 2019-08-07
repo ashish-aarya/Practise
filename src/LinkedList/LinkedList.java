@@ -83,7 +83,7 @@ public class LinkedList {
 	}
 
 	private node getNodeAt(int idx) throws Exception {
-		if (idx == 0)
+		if (this.size == 0)
 			throw new Exception("Linked List Empty");
 		if (idx < 0 || idx >= this.size)
 			throw new Exception("Invalid Index");
@@ -133,6 +133,44 @@ public class LinkedList {
 	public int removelast() throws Exception {
 		if (this.size == 0)
 			throw new Exception("LinkedList is Empty");
+		int rv = this.tail.data;
+		if (this.size == 1) {
+			this.head = null;
+			this.tail = null;
+			this.size = 0;
 
+		} else {
+			node las = getNodeAt(this.size - 2);
+			las.next = null;
+			this.tail = las;
+			this.size--;
+		}
+		return rv;
+	}
+
+	public int removeat(int idx) throws Exception {
+		if (this.size == 0)
+			throw new Exception("Linked List is Empty");
+		if (idx < 0 || idx > this.size) {
+			throw new Exception("Invalid Index");
+		}
+		if (idx == 0) {
+			return removefirst();
+		} else if (idx == this.size - 1) {
+			return removelast();
+		} else {
+			node cp = getNodeAt(idx-1);
+			node c = cp.next;
+			node ln = c.next;
+			this.size--;
+			return c.data;
+		}
+
+	}
+	public void reversedata () throws Exception
+	{
+		if (this.size==0)
+			throw new Exception ("Empty Linked List");
+		
 	}
 }
