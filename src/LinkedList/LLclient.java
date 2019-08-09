@@ -24,6 +24,10 @@ public class LLclient {
 		ll.display();
 		System.out.println(ll.removeat(1));
 		ll.display();
+		ll.removefirst();
+		ll.display();
+		ll.reversedataIrtritevely();
+		ll.display();
 	}
 
 }

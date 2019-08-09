@@ -71,9 +71,9 @@ public class LinkedList {
 	}
 
 	public int getAt(int idx) throws Exception {
-		if (idx == 0)
+		if (this.size == 0)
 			throw new Exception("Linked List Empty");
-		if (idx < 0 || idx >= this.size)
+		if (idx < 0 || idx > this.size)
 			throw new Exception("Invalid Index");
 		node temp = this.head;
 		for (int i = 0; i < idx; i++) {
@@ -85,10 +85,10 @@ public class LinkedList {
 	private node getNodeAt(int idx) throws Exception {
 		if (this.size == 0)
 			throw new Exception("Linked List Empty");
-		if (idx < 0 || idx >= this.size)
+		if (idx < 0 || idx > this.size)
 			throw new Exception("Invalid Index");
 		node temp = this.head;
-		for (int i = 0; i < idx; i++) {
+		for (int i = 1; i <= idx; i++) {
 			temp = temp.next;
 		}
 		return temp;
@@ -159,7 +159,7 @@ public class LinkedList {
 		} else if (idx == this.size - 1) {
 			return removelast();
 		} else {
-			node cp = getNodeAt(idx-1);
+			node cp = getNodeAt(idx - 1);
 			node c = cp.next;
 			node ln = c.next;
 			this.size--;
@@ -167,10 +167,26 @@ public class LinkedList {
 		}
 
 	}
-	public void reversedata () throws Exception
-	{
-		if (this.size==0)
-			throw new Exception ("Empty Linked List");
-		
+
+	public void reversedataIrtritevely() throws Exception {
+		if (this.size == 0)
+			throw new Exception("Empty Linked List");
+		int start = 0;
+		int end = this.size;
+		while (start < end) {
+			node left = getNodeAt(start);
+			node right = getNodeAt(end);
+			int temp = left.data;
+			left.data = right.data;
+			right.data = temp;
+			start++;
+			end--;
+
+		}
+
+	}
+
+	public void reversepointerIrtretively() {
+
 	}
 }
