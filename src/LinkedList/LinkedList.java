@@ -187,6 +187,31 @@ public class LinkedList {
 	}
 
 	public void reversepointerIrtretively() {
+		node prev = this.head;
+		node curr = prev.next;
+		while (curr != null) {
+			node ahead = curr.next;
+			curr.next = prev;
+			prev = ahead;
+			curr = ahead;
 
+		}
+		node te = this.head;
+		this.head = this.tail;
+		this.tail = te;
+		this.tail.next = null;
+
+	}
+
+	public int mid() {
+		node slow = this.head;
+		node fast = this.head;
+
+		while (fast.next != null && fast.next.next != null) {
+			slow = slow.next;
+			fast = fast.next.next;
+
+		}
+		return slow.data;
 	}
 }
