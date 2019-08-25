@@ -27,9 +27,32 @@ public class GenericTree {
 		}
 		int data = scr.nextInt();
 		Node nn = new Node();
-		
+		nn.data = data;
+		System.out.println("Enter the childs data");
+		int noc = scr.nextInt();
+		for (int i = 0; i < noc; i++) {
+			Node child = construction(nn, i);
+			nn.children.add(child);
+		}
 
-		return null;
+		return nn;
 	}
 
+	public void display() {
+		System.out.println("----------------");
+		display(this.root);
+		System.out.println("----------------");
+	}
+
+	private void display(Node node) {
+		String str = node.data + "->";
+		for (Node child : node.children) {
+			str += child.data + ",";
+		}
+		str += ".";
+		System.out.println(str);
+		for (Node child : node.children)
+			display(child);
+
+	}
 }
