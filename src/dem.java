@@ -1,98 +1,53 @@
+/* package codechef; // don't place package name! */
 
+import java.util.*;
+import java.lang.*;
+import java.io.*;
 
-import java.util.ArrayList;
-import java.util.Scanner;
-
-public class dem {
-	public static int ct=0;
-	public static void main(String[] args) {
-
-		Scanner scn = new Scanner(System.in);
-		String str = scn.next();
-		ArrayList<String> ar=codesStringAL(str);
-		for (String val:ar)
-			System.out.print(val+", ");
-//		 System.out.println(codesString(str));
-//		codesString(str, " ");
-		System.out.println("\n"+ct);
+/* Name of the class has to be "Main" only if the class is public. */
+class dem
+{
+    
+	public static void work () 
+	{Scanner scr= new Scanner (System.in);
+		// your code goes here
+		int tc,ar[],n,k;
+		tc=scr.nextInt();
+		while (tc>0)
+		{
+		     n=scr.nextInt();
+		     k=scr.nextInt();
+		     ar=new int[n];
+		     for (int i=0;i<n;i++)
+		     {
+		        ar[i]=scr.nextInt();
+		     }
+		     int var=Math.ceil(n/k);
+		     for (int i=0;i<n-2;i++)
+		     {
+		          if (n%ar==0)
+		          for (int k=0;k<n)
+		          {int count=0;
+		          int sum=0;
+		          for (int k=0;k<n-1;k++)
+		          {
+		          while (count)
+		          {
+		               if (count==var)
+		               {
+		                    sum+=ar[k];
+		               }
+		          
+		         
+		          else
+		          {
+		               
+		          }
+		     }
+		     }
+		     tc--;
+		}
 		
 	}
-	public static ArrayList<String> codesStringAL(String ques) {
 
-		if (ques.length() == 0) {
-			ArrayList<String> br = new ArrayList<>();
-			br.add("");
-			ct++;
-			return br;
-		}
-
-		ArrayList<String> mr = new ArrayList<>();
-
-		String strch1 = ques.substring(0, 1); // "1"
-		int intch1 = Integer.parseInt(strch1); // 1
-		char codech1 = (char) (intch1 + 'a' - 1); // 1 -> a
-
-		String roq1 = ques.substring(1); // 125
-
-		ArrayList<String> rr1 = codesStringAL(roq1); // 125, a
-
-		for (String val : rr1) {
-			mr.add(codech1 + val);
-		}
-
-		if (ques.length() >= 2) {
-
-			String strch2 = ques.substring(0, 2); // "11"
-			int intch2 = Integer.parseInt(strch2); // 11
-
-			if (intch2 <= 26) {
-				char codech2 = (char) (intch2 + 'a' - 1); // 1 -> a
-
-				String roq2 = ques.substring(2); // 25
-
-				ArrayList<String> rr2 = codesStringAL(roq2); // 25, k
-
-				for (String val : rr2) {
-					mr.add(codech2 + val);
-				}
-			}
-
-		}
-
-		return mr;
-
-	}
-
-	public static void codesString(String ques, String ans) {
-
-		if (ques.length() == 0) {
-			System.out.println(ans);
-			
-			return;
-		}
-
-		String strch1 = ques.substring(0, 1); // "1"
-		int intch1 = Integer.parseInt(strch1); // 1
-		char codech1 = (char) (intch1 + 'a' - 1); // 1 -> a
-
-		String roq1 = ques.substring(1); // 125
-
-		codesString(roq1, ans + codech1); // 125, a
-
-		if (ques.length() >= 2) {
-
-			String strch2 = ques.substring(0, 2); // "11"
-			int intch2 = Integer.parseInt(strch2); // 11
-
-			if (intch2 <= 26) {
-				char codech2 = (char) (intch2 + 'a' - 1); // 1 -> a
-
-				String roq2 = ques.substring(2); // 25
-
-				codesString(roq2, ans + codech2); // 25, k
-			}
-
-		}
-
-	}
 }
