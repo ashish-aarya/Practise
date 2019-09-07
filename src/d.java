@@ -1,43 +1,33 @@
-import java.util.*;
-
+import java.util.Scanner;
+import java.lang.*;
 public class d {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		Scanner scr= new Scanner (System.in);
+		int n=scr.nextInt();
+		int res= (int)(Math.log(n)/Math.log(2.0));
+		System.out.println(Math.pow (2.0,res));
+		int ar[] = new int [n];
+		/*for (int i=0;i<n;i++)
+		{
+			ar[i]=i+1;
+		}*/
+	//	work(ar);
 	}
 
-	public static void work() {
-		Scanner scr = new Scanner(System.in);
-		// your code goes here
-		int tc, ar[], n, k;
-		tc = scr.nextInt();
-		while (tc > 0) {
-			n = scr.nextInt();
-			k = scr.nextInt();
-			ar = new int[n];
-			for (int i = 0; i < n; i++) {
-				ar[i] = scr.nextInt();
-			}
-			int var = (int) Math.ceil(n / k);
-			for (int i = 0; i < n - 2; i++) {
-				if (n % var == 0)
-					for (int k1 = 0; k1 < n - 1; k1++) {
-						int count = 0;
-						int sum = 0;
-
-						while (count <= var) {
-							if (count == var) {
-								sum += ar[k1];
-							}
-
-							else {
-
-							}
-						}
-					}
-				tc--;
+	public static void work(int ar[]) {
+		if (ar.length-1==0) {
+			System.out.println(ar[0]);
+			return;
+		}
+		int ans[] = new int[ar.length / 2 ];
+		int j = 0;
+		for (int i = 0; i < ar.length; i++) {
+			if (i % 2 != 0) {
+				ans[j] = ar[i];
+				j++;
 			}
 		}
+		work(ans);
 	}
 }
