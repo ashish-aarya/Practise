@@ -61,15 +61,15 @@ public class BinaryTree {
 			str += ".";
 		else
 			str += node.left.data;
-		
+
 		str = "->" + node.data + "<-";
-		
+
 		if (node.right == null)
 			str += ".";
 		else
 			str += node.right.data;
 		System.out.println(str);
-display(node.left);
-display(node.right);
+		display(node.left);
+		display(node.right);
 	}
 }
