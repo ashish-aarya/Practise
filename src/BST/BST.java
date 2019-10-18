@@ -36,8 +36,7 @@ public class BST {
 	}
 
 	private void display(Node nn) {
-		if (nn==null)
-		{
+		if (nn == null) {
 			return;
 		}
 		String str = " ";
@@ -52,8 +51,25 @@ public class BST {
 			str += " " + nn.right.data;
 		System.out.println(str);
 		display(nn.left);
-		///System.out.println(str);
+		/// System.out.println(str);
 		display(nn.right);
+	}
+
+	public boolean find(int item) {
+		return find(this.root, item);
+	}
+
+	private boolean find(Node nn, int item) {
+		// TODO Auto-generated method stub
+		if (nn == null)
+			return false;
+		if (nn.data > item) {
+			return find(nn.left, item);
+		} else if (nn.data < item)
+			return find(nn.right, item);
+
+		else
+			return true;
 	}
 
 }

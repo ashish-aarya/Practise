@@ -7,6 +7,7 @@ public class BSTCLIENT {
 		int[] in = { 10, 20, 30, 40, 50, 60, 70 };
 		BST bt=new BST(in);
 		bt.display();
+		System.out.println(bt.find(20));
 	}
 
 }
