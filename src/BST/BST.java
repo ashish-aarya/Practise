@@ -71,31 +71,53 @@ public class BST {
 		else
 			return true;
 	}
-	public void ht ()
-	{
+
+	public void ht() {
 		System.out.println(ht(this.root));
 	}
 
 	private int ht(Node nn) {
 		// TODO Auto-generated method stub
-		
-		if (nn==null)
+
+		if (nn == null)
 			return -1;
-		int left=ht(nn.left);
-		int right=ht(nn.right);
-		return Math.max(left, right)+1;
+		int left = ht(nn.left);
+		int right = ht(nn.right);
+		return Math.max(left, right) + 1;
 	}
-	public void max ()
-	{
+
+	public void max() {
 		System.out.println(max(this.root));
 	}
-	private int max (Node nn)
-	{
-		if (nn.right ==null)
-		{
+
+	private int max(Node nn) {
+		if (nn.right == null) {
 			return nn.data;
 		}
-		int rs=max(nn.right);
+		int rs = max(nn.right);
 		return rs;
+	}
+
+	public void add(int item) {
+		add(this.root, item);
+	}
+
+	private void add(Node nn, int item) {
+		if (nn == null)
+			return;
+		if (nn.data > item) {
+			if (nn.left == null) {
+				Node n = new Node();
+				n.data = item;
+				nn.left = n;
+			} else
+				add(nn.left, item);
+		} else if (nn.right == null) {
+			Node n = new Node();
+			n.data = item;
+			nn.right = n;
+		} else
+			add(nn.right, item);
+
 	}
 }

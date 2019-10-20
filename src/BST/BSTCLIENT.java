@@ -10,6 +10,8 @@ public class BSTCLIENT {
 		System.out.println(bt.find(20));
 		bt.ht();
 		bt.max();
+		bt.add(5);
+		bt.display();
 	}
 
 }
