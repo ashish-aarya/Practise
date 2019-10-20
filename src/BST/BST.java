@@ -85,4 +85,17 @@ public class BST {
 		int right=ht(nn.right);
 		return Math.max(left, right)+1;
 	}
+	public void max ()
+	{
+		System.out.println(max(this.root));
+	}
+	private int max (Node nn)
+	{
+		if (nn.right ==null)
+		{
+			return nn.data;
+		}
+		int rs=max(nn.right);
+		return rs;
+	}
 }

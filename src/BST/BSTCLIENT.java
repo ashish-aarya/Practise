@@ -9,6 +9,7 @@ public class BSTCLIENT {
 		bt.display();
 		System.out.println(bt.find(20));
 		bt.ht();
+		bt.max();
 	}
 
 }
