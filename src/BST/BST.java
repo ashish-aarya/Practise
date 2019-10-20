@@ -71,5 +71,18 @@ public class BST {
 		else
 			return true;
 	}
+	public void ht ()
+	{
+		System.out.println(ht(this.root));
+	}
 
+	private int ht(Node nn) {
+		// TODO Auto-generated method stub
+		
+		if (nn==null)
+			return -1;
+		int left=ht(nn.left);
+		int right=ht(nn.right);
+		return Math.max(left, right)+1;
+	}
 }

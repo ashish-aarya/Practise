@@ -8,6 +8,7 @@ public class BSTCLIENT {
 		BST bt=new BST(in);
 		bt.display();
 		System.out.println(bt.find(20));
+		bt.ht();
 	}
 
 }
