@@ -120,4 +120,25 @@ public class BST {
 			add(nn.right, item);
 
 	}
+
+	private void remove(int item) {
+		remove(this.root, null,false, item);
+	}
+
+	public int remove(Node node, Node parent, boolean ilc, int item) {
+		if (node.data < item) {
+			remove(node.right, node, false, item);
+		} else if (node.data > item)
+			remove(node.left, node, true, item);
+		else {
+			if (node.left == null && node.right == null) {
+				if (ilc)
+					node.left = null;
+				else
+					node.right = null;
+			}
+
+		}
+
+	}
 }
