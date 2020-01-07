@@ -7,10 +7,16 @@ public class eof {
 
 		Scanner scr= new Scanner (System.in);
 		
-		int n = scr.nextInt();
-		for (int i = 0; i < n; i++) {
+	int line=1;;
+		while (true)
+		{
 			String str = scr.nextLine();
-			System.out.println(i+1+" "+str);
+			System.out.println(line+" "+str);
+			line++;
+			if (!scr.hasNext())
+			{
+				break;
+			}
 		}
 
 	}
