@@ -74,5 +74,9 @@ public class DP {
 		strg[curr]=count;
 	return count;
 	}
+	public static int cbpir (int curr, int end, int [] strg)
+	{
+		
+	}
 	
 }
