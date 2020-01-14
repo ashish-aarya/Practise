@@ -11,6 +11,8 @@ public class DP {
 //		System.out.println(fiboir(n, s));
 		System.out.println(cbp(0, n));
 		System.out.println(cbprs(0, n, s));
+		System.out.println(cbpir(0, n));
+	
 	}
 
 	public static int fibbo(int n) {
@@ -74,8 +76,21 @@ public class DP {
 		strg[curr]=count;
 	return count;
 	}
-	public static int cbpir (int curr, int end, int [] strg)
-	{
+	public static int cbpir (int curr, int end)	{
+		
+		int[] strg= new int [end+1];
+		strg[end]=1;
+		for (int i=end-1;i>=0;i--)
+		{
+			int count=0;
+			for (int dice =1;dice<=6&& dice+i<strg.length;dice++ )
+			{
+				count+=strg[dice+i];
+			}
+			strg[i]=count;
+		}
+			
+		return strg[0];
 		
 	}
 	
