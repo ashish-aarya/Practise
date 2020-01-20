@@ -6,12 +6,14 @@ public class DP {
 		// TODO Auto-generated method stub
 		int n = 30;
 //		System.out.println(fibbo(n));
-	int[] s = new int[n + 1];
+//	int[] s = new int[n + 1];
+		int[][] s = new int[n + 1][n+1];
 //		System.out.println(fibboRS(n, s));
 //		System.out.println(fiboir(n, s));
-		System.out.println(cbp(0, n));
-		System.out.println(cbprs(0, n, s));
-		System.out.println(cbpir(0, n));
+//		System.out.println(cbp(0, n));
+//		System.out.println(cbprs(0, n, s));
+//		System.out.println(cbpir(0, n));
+		System.out.println(mazepath(0, 0, 6, 6, s));
 	
 	}
 
@@ -92,6 +94,22 @@ public class DP {
 			
 		return strg[0];
 		
+	}
+	public static int mazepath (int cr,int cc, int er,int ec,int [][] strg)
+	{
+		
+	if (cr==er && cc==ec)
+	{
+		return 1;
+	}
+	if (cr>er || cc>ec)
+		return 0;
+	if (strg[cr][cc]!=0)
+		return strg[cr][cc];
+	int ch= mazepath(cr+1, cc, er, ec, strg);
+	int cv=mazepath(cr, cc+1, er, ec, strg);
+	strg[cr][cc]=ch+cv;
+	return strg[cr][cc];
 	}
 	
 }
